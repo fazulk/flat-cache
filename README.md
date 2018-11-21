@@ -18,6 +18,13 @@ var flatCache = require('flat-cache')
 // Id a new one will be prepared to be created
 var cache = flatCache.load('cacheId');
 
+// save key to memory, without it cache.clearAll will not work
+cache.saveTitle('key')
+
+//check to see if that cache file exists in memory, without it cache.clearAll will not work
+// returns true if exists
+cache.checkTitle('key')
+
 // sets a key on the cache
 cache.setKey('key', { foo: 'var' });
 
